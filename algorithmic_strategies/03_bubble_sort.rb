@@ -3,6 +3,20 @@
 # The method should return the array.
 # Do not use the built-in Array#sort
 
+def bubble_sort(arr)
+  sorted = false
+
+  while !sorted do
+    sorted = true
+    (0...arr.length - 1).map do |el|
+      if arr[el] > arr[el + 1]
+        arr[el], arr[el + 1] = arr[el + 1], arr[el]
+        sorted = false
+      end
+    end
+  end
+  arr
+end
 
 p bubble_sort([2, 8, 5, 2, 6])      # => [2, 2, 5, 6, 8]
 p bubble_sort([10, 8, 7, 1, 2, 3])  # => [1, 2, 3, 7, 8, 10]
